@@ -40,18 +40,11 @@ NSString *title;
 }
 
 -(void)calculateScore {
-	if (_objectiveValue == _sliderValue) {
-		_points = 100;
-	}
-	else if (_objectiveValue > _sliderValue) {
-		_points = 100 - (_objectiveValue - _sliderValue);
-	}
-	else if (_sliderValue > _objectiveValue) {
-		_points = 100 - (_sliderValue - _objectiveValue);
-	}
-	else {
-		_points = 0;
-	}
+	if (_objectiveValue == _sliderValue) { _points = 100; }
+	else if (_objectiveValue > _sliderValue) { _points = 100 - (_objectiveValue - _sliderValue); }
+	else if (_sliderValue > _objectiveValue) { _points = 100 - (_sliderValue - _objectiveValue); }
+	else { 		_points = 0;
+}
 	
 	if (_points == 100) { title = @"Perfect!"; }
 	else if (_points >= 95) { title = @"Almost hit the pot!"; }

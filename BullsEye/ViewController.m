@@ -74,12 +74,8 @@ NSString *title;
 - (IBAction)showAlert {
 	_sliderValue = roundf(self.slider.value);
 	[self calculateScore];
-	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-																																					 message:[NSString stringWithFormat:@"Your current value is: %d\nYour value goal is: %d\nYou scored %d points!", _sliderValue, _objectiveValue, _points]
-																																		preferredStyle:UIAlertControllerStyleAlert];
-	UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK"
-																												style:UIAlertActionStyleDefault
-																											handler:nil];
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:[NSString stringWithFormat:@"Your current value is: %d\nYour value goal is: %d\nYou scored %d points!", _sliderValue, _objectiveValue, _points] preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
 	[alertController addAction:alertAction];
 	[self presentViewController:alertController animated:true completion:nil];
 	_round++;
@@ -88,12 +84,8 @@ NSString *title;
 }
 
 - (IBAction)showDeveloperInfo {
-	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Developer Info"
-																																					 message:@"👨🏼‍💻 by: Felipe Amaral 👱🏼‍♂️\nMade with ❤️ from 🇧🇷.\nIt's been a long ⏰ since I've \nlast developed for 📱, so \nnothing like get back at it! ☺️"
-																																		preferredStyle:UIAlertControllerStyleAlert];
-	UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK"
-																												style:UIAlertActionStyleDefault
-																											handler:nil];
+	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Developer Info" message:@"👨🏼‍💻 by: Felipe Amaral 👱🏼‍♂️\nMade with ❤️ from 🇧🇷.\nIt's been a long ⏰ since I've \nlast developed for 📱, so \nnothing like get back at it! ☺️" preferredStyle:UIAlertControllerStyleAlert];
+	UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
 	[alertController addAction:alertAction];
 	[self showViewController:alertController sender:nil];
 }
